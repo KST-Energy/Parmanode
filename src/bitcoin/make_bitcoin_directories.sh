@@ -21,7 +21,7 @@ internal_drive_directories
     # check if drive is internal
     # give user options if .bitcoin exists
     # option to call make_bakcup_dot_bitcoin
-    # abort bitoin installation if return 1
+    # abort bitcoin installation if return 1
     if [[ $? == 1 ]] ; then return ; fi 
 return 0
 }
@@ -71,7 +71,7 @@ else return 1
 fi
 
 # If .bitcoin directory exists, decide what to do with it.
-# If it doesn't exists, do nothing, running bitcoind will create it automatically.
+# If it doesn't exist, do nothing, running bitcoind will create it automatically.
 
 if [[ -d $HOME/.bitcoin ]]
 then 
@@ -290,7 +290,7 @@ done
 
     cd $HOME && ln -s /media/$(whoami)/parmanode/.bitcoin/ .bitcoin     
     if [[ -d $HOME/.bitcoin ]] ; then debug_point ".bitoin made" ; else debug_point "failed to make .bition" ; fi
-    #symlink can be made withouterrors even if target doesn't exist yet.
+    #symlink can be made without errors even if target doesn't exist yet.
 
 set_terminal
 echo "
@@ -310,7 +310,7 @@ function mount_drive {
     #if mounted, make .bitcoin and exit 0
 	    if mountpoint -q "/media/$(whoami)/parmanode" ; then
 		mkdir /media/$(whoami)/parmanode/.bitcoin > /dev/null 2>&1 
-		# potentially redundant depending on which function calls but no harm if the directory exits.
+		# potentially redundant depending on which function calls but no harm if the directory exists.
 		return 0
 
     # Otherwise, try mounting with label, then UUID, then loop.
